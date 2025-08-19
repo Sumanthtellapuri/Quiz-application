@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link href="./index.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="bg-container">
+        <div class="navbar">Welcome to the Quiz</div>
+        <div class="quiz-container">
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress"></div>
+            </div>
+            <div class="qno-and-time">
+                <p class="questions" id="qno"></p>
+                <p id="timer" style="font-weight: bold;">Time Left: 60s</p>
+            </div>
+            <div class="content">
+                <div class="question" id="question">Question will appear here.</div>
+                <div class="options" id="options"></div>
+            </div>
+
+            <div class="btn-container">
+                <div class="startnow" id="start">
+                    <button onclick="startQuiz()" class="startbtn button btn1" type="button">Start Now</button>
+                </div>
+                <div class="retry" id="retry">
+                    <button onclick="retryQuiz()" class="retrybtn btn2 button ">Retry</button>
+                </div>
+                <button id="prevButton" onclick="prevQuestion()" class="button btn3">Previous</button>
+                <button id="nextButton" onclick="loadNextQuestion()" class="button btn4">Next</button>
+                <button id="explanationButton" style="display: none;" class="button btn5">Show Explanation</button>
+            </div>
+
+            <div class="modal fade" id="explanation-modal" tabindex="-1" role="dialog" aria-labelledby="explanationModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="explanationModalLabel">Explanation</h5>
+                            <button type="button" class="buttton close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="explanation-text">
+                            <!-- Explanation text will be set dynamically -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="iindex.js"></script>
+</body>
+
+</html>
